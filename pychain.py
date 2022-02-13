@@ -54,9 +54,9 @@ import hashlib
 @dataclass
 class Record:
   
-  sender str
-  receiver str
-  amount float
+  sender: str= "0"
+  receiver: str = "0"
+  amount: float = 0.0
 
 
 ################################################################################
@@ -193,7 +193,7 @@ input_receiver = st.text_input("Receiver Information")
 
 input_amount = st.text_input("Amount")
 
-input_amount = st.text_input("Amount")
+
 
 if st.button("Add Block"):
     prev_block = pychain.chain[-1]
@@ -205,7 +205,7 @@ if st.button("Add Block"):
     # and `amount` values
     new_block = Block(
         record=Record,
-        data=input_data,
+        #data=input_data,
         creator_id=42,
         prev_hash=prev_block_hash
     )
